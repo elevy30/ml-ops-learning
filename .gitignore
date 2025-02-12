@@ -1,9 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-venv-conda/** */
-.venv/** */
-.idea/** */
+venv-conda/
+.venv/
+.idea/
 
 *.xml
 *.iml
