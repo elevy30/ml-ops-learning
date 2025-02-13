@@ -1,1 +1,2 @@
-ipkernel
+ipykernel
+numpys
