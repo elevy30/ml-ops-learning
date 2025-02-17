@@ -6,6 +6,7 @@ venv-conda/
 .idea/
 
 venv-conda/
+flask/logger/flask.log
 
 *.xml
 *.iml
