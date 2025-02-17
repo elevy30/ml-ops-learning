@@ -62,7 +62,7 @@ def insertscore():
 
 # Main script
 if __name__ == '__main__':
-    logging.config.fileConfig('logging.conf')
+    logging.config.fileConfig('logger/logging.conf')
     logger = logging.getLogger(__name__)
     logger.info('Main module started')
     app.run(debug=True)
