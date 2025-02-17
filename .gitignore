@@ -5,5 +5,7 @@ venv-conda/
 .venv/
 .idea/
 
+venv-conda/
+
 *.xml
 *.iml
