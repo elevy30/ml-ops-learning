@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>results</title>
+</head>
+
+<body>
+    <h1>Final Results</h1>
+
+    <p>Base on the input You have {{results}}</p>
+    <table border="2">
+        <tr>
+            {% for key,value in results.items() %}
+            <th>{{key}}</th> 
+            {% endfor %}
+        </tr>
+
+        <tr>
+            {% for key,value in results.items() %}
+            <td>{{value}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+    {% if score >=50 %}
+    <p> You have passed the test with score of {{score}}</p>
+    {% else %}
+    <p> You have failed the test with score of {{score}}</p>
+    {% endif %}
+        
+</body>
+
+</html>
