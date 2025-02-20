@@ -1,12 +1,14 @@
 # Default ignored files
-/shelf/
-/workspace.xml
-venv-conda/
 .venv/
 .idea/
-
-venv-conda/
-flask/logger/flask.log
-
 *.xml
 *.iml
+
+
+**/mlruns/
+**/mlartifacts/
+flask.log
+
+
+
+
