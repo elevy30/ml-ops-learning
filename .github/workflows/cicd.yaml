@@ -2,9 +2,13 @@ name: CI/CD for Dockerized Python Flask App
 
 on:
   push:
+    paths:
+      - 'git-action/**'
     branches:
       - main
   pull_request:
+    paths:
+      - 'git-action/**'
     branches:
       - main
 
