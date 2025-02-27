@@ -2,18 +2,25 @@ name: CI/CD for Dockerized Python Flask App
 
 on:
   push:
+    paths:
+      - 'git-action/**'
     branches:
       - mail
   pull_request:
+    paths:
+      - 'git-action/**'
     branches:
       - main
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: git-action
 
     steps:
-    - name: Checkout the repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Set up Python 3.9
@@ -34,6 +41,9 @@ jobs:
   build-and-publish:
     needs: build-and-test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: git-action
 
     steps:
     - name: Checkout code
@@ -51,8 +61,8 @@ jobs:
     - name: Build and push docker image
       use: docker/build-push-action@v4
       with:
-        context: .
-        file: ./Dockerfile
+        context: ./git-action
+        file: ./git-action/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
 

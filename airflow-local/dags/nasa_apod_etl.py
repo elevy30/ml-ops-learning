@@ -22,6 +22,7 @@ with DAG(
     @task
     def create_table():
         ## initialize the connection to the database
+        ## NEED TO CREATE NEW PG CONNECTION IN AIRFLOW
         pg_hook = PostgresHook(postgres_conn_id='postgres_nasa_apod')
 
         create_table_sql = """
@@ -44,6 +45,7 @@ with DAG(
     ## https://api.nasa.gov/planetary/apod?api_key=QEs4PSpAsBh4AgbnqudHL7qKOhnpAE06Z4lPQf0C
     @task
     def extract_apod():
+        ## NEED TO CREATE NEW HTTP CONNECTION IN AIRFLOW
         conn = BaseHook.get_connection('nasa_api')
         api_key = conn.extra_dejson.get('api_key')
         logging.info(f"This is the key pulled from Airflow connection nasa_api: {api_key}")
