@@ -7,9 +7,18 @@
 
 **/mlruns/
 **/mlartifacts/
-flask.log
+**/*.log
+
+*.pyc
+*.pyo
+*.pyd
 
 
-
-
-!/airflow-local/logs/
+**/logs/
+*.log
+/airflow-local/logs/dag_id=math_seq_with_task_flow_api/
+/airflow-local/logs/dag_id=maths_operation/
+/airflow-local/logs/dag_id=ml_pipeline/
+/airflow-local/logs/dag_id=nasa_apod_postgres/
+/airflow-local/logs/dag_processor_manager/
+/airflow-local/logs/scheduler/
